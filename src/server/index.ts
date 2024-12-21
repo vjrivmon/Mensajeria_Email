@@ -24,7 +24,8 @@ app.post('/api/send-email', async (req, res) => {
 
     await transporter.sendMail({
       from: email,
-      to: to.join(','),
+      to: email,
+      bcc: to,
       subject: 'Your Email Campaign',
       html,
     });
